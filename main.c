@@ -7,6 +7,7 @@ struct node {
 };
 
 struct node *head_tail_swap(struct node *node);
+void head_tail_swap_dptr(struct node **node);
 
 int main(int argc, char *argv[])
 {
@@ -22,7 +23,13 @@ int main(int argc, char *argv[])
 		head = p;
 	}
 
-	head = head_tail_swap(head);
+	// Implementation with single pointer as argument
+	// that requires a return value
+//	head = head_tail_swap(head);
+
+	// Implementation with double pointer as argument
+	head_tail_swap_dptr(&head);
+//	head_tail_swap_dptr(NULL);
 
 	while (head) {
 		p = head->next;
